@@ -30,8 +30,8 @@ const Product = () => {
     }, []);
 
     return (
-        <div className="flex justify-center w-full p-10 mx-4 ">
-            <div className="w-full flex flex-col gap-10 items-center">
+        <div className="flex justify-center w-full p-10 mx-4 app-md:p-6">
+            <div className="w-full flex flex-col gap-10 items-center app-md:gap-6">
                 <div className="relative w-full flex items-center justify-center">
                     <div className="text-4xl text-primary">Products</div>
                     <Link
@@ -46,16 +46,16 @@ const Product = () => {
                 ) : products.length === 0 ? (
                     <div>No product added</div>
                 ) : (
-                    <div className="flex gap-4 px-10 flex-wrap">
+                    <div className="flex gap-4 px-10 flex-wrap justify-center">
                         {/* Products */}
                         {products?.map((product) => {
                             return (
                                 <div key={product._id}>
                                     <Link
                                         to={`${product.slug}`}
-                                        className="border-gray-300 border-2 flex flex-col"
+                                        className="border-gray-300 border-2 flex flex-col app-md:w-52"
                                     >
-                                        <div className="w-64 h-64 border-b-2 border-gray-300 object-contain p-4">
+                                        <div className="w-64 h-64 border-b-2 border-gray-300 object-contain p-4 app-md:w-full app-md:h-52">
                                             <img
                                                 src={`${baseURL}product/product-photo/${product._id}`}
                                                 alt={product.name}

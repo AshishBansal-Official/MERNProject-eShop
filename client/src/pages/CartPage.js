@@ -55,8 +55,8 @@ const CartPage = () => {
 
     return (
         <div>
-            <div className="flex justify-center w-full p-10 mx-4">
-                <div className="w-full flex flex-col gap-10 items-center">
+            <div className="flex justify-center w-full p-10 mx-4 app-md:p-6">
+                <div className="w-full flex flex-col gap-10 items-center app-md:gap-6">
                     <div className="relative w-full flex flex-col items-center justify-center">
                         <div className="text-4xl text-primary">
                             {`Hello ${auth?.token && auth?.user?.name}`}

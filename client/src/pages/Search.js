@@ -10,8 +10,8 @@ const Search = () => {
     const [cart, setCart] = useCart();
 
     return (
-        <div className="flex justify-center w-full p-10 mx-4 ">
-            <div className="w-full flex flex-col gap-10 items-center">
+        <div className="flex justify-center w-full p-10 mx-4 app-md:p-6">
+            <div className="w-full flex flex-col gap-10 items-center app-md:gap-6">
                 <div className="relative w-full flex justify-center items-center">
                     <div className="text-4xl text-primary">Search Results</div>
                 </div>
@@ -51,16 +51,16 @@ const Search = () => {
                                                 )}
                                             </div>
                                         </div>
-                                        <div className="flex mb-4 items-center justify-center">
+                                        <div className="flex app-md:gap-2 mb-4 items-center justify-center">
                                             <div
-                                                className="btn-solid-primary bg-blue-500 text-sm mr-2"
+                                                className="btn-solid-primary bg-blue-500 text-sm mr-2 app-md:mr-0"
                                                 onClick={() =>
                                                     navigate(
                                                         `/product/${product.slug}`
                                                     )
                                                 }
                                             >
-                                                MORE DETAILS
+                                                DETAILS
                                             </div>
                                             <div
                                                 className="btn-solid-primary text-sm"

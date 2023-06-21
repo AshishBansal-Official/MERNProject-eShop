@@ -5,15 +5,15 @@ import useCategory from "../hooks/useCategory";
 const Categories = () => {
     const categories = useCategory();
     return (
-        <div className="flex justify-center w-full p-10 mx-4 ">
-            <div className="w-full flex flex-col gap-10 items-center">
+        <div className="flex justify-center w-full p-10 mx-4 app-md:p-6">
+            <div className="w-full flex flex-col gap-10 items-center app-md:gap-6">
                 <div className="relative w-full flex items-center justify-center">
                     <div className="text-4xl text-primary">All Categories</div>
                 </div>
                 {categories.length === 0 ? (
                     <div>No category found</div>
                 ) : (
-                    <div className="flex gap-4 flex-wrap">
+                    <div className="flex gap-4 flex-wrap items-center justify-center">
                         {categories?.map((category) => {
                             return (
                                 <Link

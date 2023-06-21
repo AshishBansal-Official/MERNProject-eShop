@@ -123,7 +123,7 @@ const Home = () => {
     return (
         <div className="w-full h-full flex items-center justify-center">
             {/* Filters */}
-            <div className="w-56 h-full flex flex-col">
+            <div className="w-56 h-full flex flex-col app-md:hidden">
                 <div className="p-4 text-2xl text-primary">Filters</div>
                 <hr />
                 <hr />
@@ -190,7 +190,7 @@ const Home = () => {
                 </div>
             </div>
             {/* Products */}
-            <div className="flex-1 flex flex-col h-full items-center p-8 gap-6">
+            <div className="flex-1 flex flex-col h-full items-center p-8 gap-6 app-md:px-2">
                 <div className="text-4xl m-x-auto text-primary">
                     All Products
                 </div>
@@ -204,8 +204,8 @@ const Home = () => {
                         {products?.map((product) => {
                             return (
                                 <div key={product._id}>
-                                    <div className="border-gray-300 border-2 flex flex-col">
-                                        <div className="w-64 h-64 border-b-2 border-gray-300">
+                                    <div className="border-gray-300 border-2 flex flex-col app-md:w-52">
+                                        <div className="w-64 h-64 border-b-2 border-gray-300 app-md:w-full app-md:h-52">
                                             <img
                                                 src={`${baseURL}product/product-photo/${product._id}`}
                                                 alt={product.name}
@@ -232,16 +232,16 @@ const Home = () => {
                                                 )}
                                             </div>
                                         </div>
-                                        <div className="flex mb-4 items-center justify-center">
+                                        <div className="flex app-md:gap-2 mb-4 items-center justify-center">
                                             <div
-                                                className="btn-solid-primary bg-blue-500 text-sm mr-2"
+                                                className="btn-solid-primary bg-blue-500 text-sm mr-2 app-md:mr-0"
                                                 onClick={() =>
                                                     navigate(
                                                         `/product/${product.slug}`
                                                     )
                                                 }
                                             >
-                                                MORE DETAILS
+                                                DETAILS
                                             </div>
                                             <div
                                                 className="btn-solid-primary text-sm"

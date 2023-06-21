@@ -5,6 +5,10 @@
 @layer base {
     :root {
         @apply font-poppins;
+
+        @media (max-width: 840px) {
+            font-size: 14px;
+        }
     }
 }
 
@@ -19,6 +23,10 @@
 }
 
 @layer utilities {
+    .scrollbar-none::-webkit-scrollbar {
+        display: none;
+    }
+
     .spinner_V8m1 {
         transform-origin: center;
         animation: spinner_zKoa 2s linear infinite;

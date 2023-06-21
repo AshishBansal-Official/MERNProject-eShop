@@ -106,13 +106,13 @@ const ProductDetails = () => {
                         <div className="text-xl">No Similar Products Found</div>
                     </div>
                 ) : (
-                    <div className="flex gap-4 flex-wrap flex-1">
+                    <div className="flex gap-4 flex-wrap flex-1 justify-center">
                         {/* Products */}
                         {relatedProducts?.map((product) => {
                             return (
                                 <div key={product._id}>
-                                    <div className="border-gray-300 border-2 flex flex-col">
-                                        <div className="w-64 h-64 border-b-2 border-gray-300">
+                                    <div className="border-gray-300 border-2 flex flex-col app-md:w-52">
+                                        <div className="w-64 h-64 border-b-2 border-gray-300 app-md:w-full app-md:h-52">
                                             <img
                                                 src={`${baseURL}product/product-photo/${product._id}`}
                                                 alt={product.name}
@@ -139,16 +139,16 @@ const ProductDetails = () => {
                                                 )}
                                             </div>
                                         </div>
-                                        <div className="flex mb-4 items-center justify-center">
+                                        <div className="flex app-md:gap-2 mb-4 items-center justify-center">
                                             <div
-                                                className="btn-solid-primary bg-blue-500 text-sm mr-2"
+                                                className="btn-solid-primary bg-blue-500 text-sm mr-2 app-md:mr-0"
                                                 onClick={() =>
                                                     navigate(
                                                         `/product/${product.slug}`
                                                     )
                                                 }
                                             >
-                                                MORE DETAILS
+                                                DETAILS
                                             </div>
                                             <div
                                                 className="btn-solid-primary text-sm"
