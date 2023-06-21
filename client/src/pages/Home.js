@@ -5,6 +5,7 @@ import { Prices } from "../utils/filterUtils";
 import Spinner from "../components/Spinner";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/cart";
+import { baseURL } from "../utils/api";
 
 const Home = () => {
     const [products, setProducts] = useState([]);
@@ -206,7 +207,7 @@ const Home = () => {
                                     <div className="border-gray-300 border-2 flex flex-col">
                                         <div className="w-64 h-64 border-b-2 border-gray-300">
                                             <img
-                                                src={`api/v1/product/product-photo/${product._id}`}
+                                                src={`${baseURL}product/product-photo/${product._id}`}
                                                 alt={product.name}
                                                 className="h-full w-full object-contain"
                                             />

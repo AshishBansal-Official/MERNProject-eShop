@@ -3,6 +3,7 @@ import { useAuth } from "../context/auth";
 import { useNavigate } from "react-router-dom";
 import api from "../utils/api";
 import toast from "react-hot-toast";
+import { baseURL } from "../utils/api";
 
 const CartPage = () => {
     const [auth] = useAuth();
@@ -84,7 +85,7 @@ const CartPage = () => {
                         >
                             <div className="h-40 w-40 border-r-2 border-gray-300 p-2">
                                 <img
-                                    src={`api/v1/product/product-photo/${product._id}`}
+                                    src={`${baseURL}product/product-photo/${product._id}`}
                                     alt={product.name}
                                     className="h-full w-full object-contain"
                                 />

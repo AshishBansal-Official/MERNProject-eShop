@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import api from "../../utils/api";
 import { Link, useNavigate } from "react-router-dom";
 import Spinner from "../../components/Spinner";
+import { baseURL } from "../../utils/api";
 
 const CreateProduct = () => {
     const [categories, setCategories] = useState([]);

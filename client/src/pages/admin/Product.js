@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import api from "../../utils/api";
 import Spinner from "../../components/Spinner";
 import { Link } from "react-router-dom";
+import { baseURL } from "../../utils/api";
 
 const Product = () => {
     const [products, setProducts] = useState([]);
@@ -56,7 +57,7 @@ const Product = () => {
                                     >
                                         <div className="w-64 h-64 border-b-2 border-gray-300 object-contain p-4">
                                             <img
-                                                src={`api/v1/product/product-photo/${product._id}`}
+                                                src={`${baseURL}product/product-photo/${product._id}`}
                                                 alt={product.name}
                                                 className="h-full w-full object-contain"
                                             />

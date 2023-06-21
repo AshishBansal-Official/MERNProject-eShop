@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import api from "../../utils/api";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import Spinner from "../../components/Spinner";
+import { baseURL } from "../../utils/api";
 
 const UpdateProduct = () => {
     const [categories, setCategories] = useState([]);
@@ -231,7 +232,7 @@ const UpdateProduct = () => {
                             <div>
                                 {id && (
                                     <img
-                                        src={`api/v1/product/product-photo/${id}`}
+                                        src={`${baseURL}product/product-photo/${id}`}
                                         alt="product_photo"
                                         className="h-40"
                                     />
