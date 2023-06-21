@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "../../context/auth";
 import moment from "moment";
-import api from "../../utils/api";
+import api, { baseURL } from "../../utils/api";
 
 const Orders = () => {
     const [orders, setOrders] = useState([]);
