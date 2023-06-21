@@ -30,7 +30,7 @@ const CategoryProduct = () => {
     };
 
     return (
-        <div className="flex justify-center w-full p-10 mx-4 app-md:p-6">
+        <div className="flex justify-center w-full p-10 mx-4 app-md:mx-0 app-md:p-6">
             <div className="w-full flex flex-col gap-10 items-center app-md:gap-6">
                 <div className="relative w-full flex flex-col items-center justify-center">
                     <div className="text-4xl text-primary">

@@ -22,7 +22,7 @@ const Orders = () => {
 
     return (
         <div>
-            <div className="flex justify-center w-full p-8 mx-4 app-md:p-6">
+            <div className="flex justify-center w-full p-8 mx-4 app-md:mx-0 app-md:p-6">
                 <div className="w-full flex flex-col gap-8 items-center app-md:gap-6">
                     <div className="relative w-full flex items-center justify-center">
                         <div className="text-4xl text-primary">All Orders</div>

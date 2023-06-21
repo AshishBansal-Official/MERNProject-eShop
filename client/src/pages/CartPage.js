@@ -55,7 +55,7 @@ const CartPage = () => {
 
     return (
         <div>
-            <div className="flex justify-center w-full p-10 mx-4 app-md:p-6">
+            <div className="flex justify-center w-full p-10 mx-4 app-md:mx-0 app-md:p-6">
                 <div className="w-full flex flex-col gap-10 items-center app-md:gap-6">
                     <div className="relative w-full flex flex-col items-center justify-center">
                         <div className="text-4xl text-primary">
@@ -73,7 +73,7 @@ const CartPage = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex">
+            <div className="flex app-md:flex-col app-md:mx-2">
                 <div className="flex-grow mb-4">
                     {cart.length === 0 && (
                         <div className="m-2 text-lg">No Item in Cart</div>
@@ -112,7 +112,7 @@ const CartPage = () => {
                         </div>
                     ))}
                 </div>
-                <div className="w-1/3 max-w-sm ">
+                <div className="w-1/3 app-md:w-full app-md:mx-2 max-w-sm ">
                     <div className="text-2xl">Cart Summary</div>
                     <div className="py-2">Total | Checkout | Payment</div>
                     <hr />
@@ -134,12 +134,14 @@ const CartPage = () => {
                                         Update Address
                                     </div>
                                 </div>
-                                <div
-                                    className="btn-solid-primary w-min whitespace-nowrap"
-                                    onClick={placeOrder}
-                                >
-                                    Place Order
-                                </div>
+                                {cart?.length > 0 && (
+                                    <div
+                                        className="btn-solid-primary w-min whitespace-nowrap"
+                                        onClick={placeOrder}
+                                    >
+                                        Place Order
+                                    </div>
+                                )}
                             </>
                         ) : (
                             <div className="mb-3">

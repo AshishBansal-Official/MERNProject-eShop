@@ -8,24 +8,28 @@ const AdminDashboard = () => {
         <div className="flex flex-col items-center justify-center h-full gap-10 app-md:gap-6">
             <div className="text-4xl text-primary mb-2">Admin Panel</div>
             <div className="flex gap-6 app-md:gap-4">
-                <Link
-                    to="create-category"
-                    className="h-52 w-52 app-md:h-40 app-md:w-40 border-2 border-primary rounded-md shadow-xl flex flex-col justify-center items-center  cursor-pointer hover:scale-105 duration-300"
-                >
-                    <BiCategory className="w-40 h-40 text-primary" />
-                    <div className="font-bold text-xl text-primary">
-                        Category
-                    </div>
-                </Link>
-                <Link
-                    to="product"
-                    className="h-52 w-52 app-md:h-40 app-md:w-40 border-2 border-primary rounded-md shadow-xl flex flex-col justify-center items-center  cursor-pointer hover:scale-105 duration-300"
-                >
-                    <MdOutlineProductionQuantityLimits className="w-40 h-40 text-primary" />
-                    <div className="font-bold text-xl text-primary">
-                        Product
-                    </div>
-                </Link>
+                <div className="border-2 border-primary rounded-md shadow-xl">
+                    <Link
+                        to="create-category"
+                        className="h-52 w-52 app-md:h-40 app-md:w-40 app-md:m-2 flex flex-col justify-center items-center  cursor-pointer hover:scale-105 duration-300"
+                    >
+                        <BiCategory className="w-40 h-40 text-primary" />
+                        <div className="font-bold text-xl text-primary">
+                            Category
+                        </div>
+                    </Link>
+                </div>
+                <div className="border-2 border-primary rounded-md shadow-xl">
+                    <Link
+                        to="product"
+                        className="h-52 w-52 app-md:h-40 app-md:w-40 app-md:m-2 flex flex-col justify-center items-center  cursor-pointer hover:scale-105 duration-300"
+                    >
+                        <MdOutlineProductionQuantityLimits className="w-40 h-40 text-primary" />
+                        <div className="font-bold text-xl text-primary">
+                            Product
+                        </div>
+                    </Link>
+                </div>
                 {/* <Link
                     to="users"
                     className="h-52 w-52 border-2 border-primary rounded-md shadow-xl flex flex-col justify-center items-center  cursor-pointer hover:scale-105 duration-300"
