@@ -231,7 +231,7 @@ const UpdateProduct = () => {
                             <div>
                                 {id && (
                                     <img
-                                        src={`${process.env.REACT_APP_API}product/product-photo/${id}`}
+                                        src={`product/product-photo/${id}`}
                                         alt="product_photo"
                                         className="h-40"
                                     />
