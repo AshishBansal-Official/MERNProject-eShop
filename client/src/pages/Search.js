@@ -10,7 +10,7 @@ const Search = () => {
     const [cart, setCart] = useCart();
 
     return (
-        <div className="flex justify-center w-full p-10 mx-4 app-md:mx-0 app-md:mx-0 app-md:p-6">
+        <div className="flex justify-center w-full p-10 mx-4 app-md:mx-0 app-md:p-6">
             <div className="w-full flex flex-col gap-10 items-center app-md:gap-6">
                 <div className="relative w-full flex justify-center items-center">
                     <div className="text-4xl text-primary">Search Results</div>
