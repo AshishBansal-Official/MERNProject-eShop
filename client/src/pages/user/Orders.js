@@ -88,7 +88,7 @@ const Orders = () => {
                                                             >
                                                                 <div className="h-40 w-40 border-r-2 border-gray-300 p-2">
                                                                     <img
-                                                                        src={`product/product-photo/${product._id}`}
+                                                                        src={`api/v1/product/product-photo/${product._id}`}
                                                                         alt={
                                                                             product.name
                                                                         }

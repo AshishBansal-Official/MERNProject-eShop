@@ -56,7 +56,7 @@ const Product = () => {
                                     >
                                         <div className="w-64 h-64 border-b-2 border-gray-300 object-contain p-4">
                                             <img
-                                                src={`product/product-photo/${product._id}`}
+                                                src={`api/v1/product/product-photo/${product._id}`}
                                                 alt={product.name}
                                                 className="h-full w-full object-contain"
                                             />
