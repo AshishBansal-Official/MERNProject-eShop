@@ -53,7 +53,7 @@ const Product = () => {
                                 <div key={product._id}>
                                     <Link
                                         to={`${product.slug}`}
-                                        className="border-gray-300 border-2 flex flex-col app-md:w-52"
+                                        className="w-64 border-gray-300 border-2 flex flex-col app-md:w-52"
                                     >
                                         <div className="w-64 h-64 border-b-2 border-gray-300 object-contain p-4 app-md:w-full app-md:h-52">
                                             <img
@@ -63,9 +63,14 @@ const Product = () => {
                                             />
                                         </div>
                                         <div className="p-2">
-                                            <div>{product.name}</div>
+                                            <div>
+                                                {product.name.substring(0, 24)}
+                                            </div>
                                             <div className="text-sm">
-                                                {product.description}
+                                                {product.description.substring(
+                                                    0,
+                                                    100
+                                                )}
                                             </div>
                                         </div>
                                     </Link>

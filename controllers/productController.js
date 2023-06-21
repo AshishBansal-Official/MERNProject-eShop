@@ -201,11 +201,7 @@ export const productFiltersController = async (req, res) => {
             const radioArr = radio.split(",");
             args.price = { $gte: radioArr[0], $lte: radioArr[1] };
         }
-        console.log(args);
         const products = await productModel.find(args);
-        products.map((product) => {
-            console.log(product.name);
-        });
         res.status(200).send({
             success: true,
             products,

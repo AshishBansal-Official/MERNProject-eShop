@@ -91,7 +91,7 @@ const CartPage = () => {
                                 />
                             </div>
                             <div className="flex flex-col gap-1 p-2">
-                                <div>{product.name}</div>
+                                <div>{product.name.substring(0, 24)}</div>
                                 <div>
                                     {product.description.substring(0, 100)}
                                 </div>

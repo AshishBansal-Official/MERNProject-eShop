@@ -14,8 +14,6 @@ const Home = () => {
     const [loading, setLoading] = useState(false);
     const [checked, setChecked] = useState([]);
     const [radio, setRadio] = useState([]);
-    const [total, setTotal] = useState(0);
-    const [page, setPage] = useState(1);
     const navigate = useNavigate();
     const [cart, setCart] = useCart();
 
@@ -23,7 +21,7 @@ const Home = () => {
     const getAllProducts = async () => {
         setFirstLoading(true);
         try {
-            const { data } = await api.get(`/product/product-list/${page}`);
+            const { data } = await api.get(`/product/get-products`);
             if (data?.success) {
                 setProducts(data?.products);
             }
@@ -53,39 +51,9 @@ const Home = () => {
         }
     };
 
-    // Get Total Count
-    const getTotal = async () => {
-        try {
-            const { data } = await api.get("product/product-count");
-            setTotal(data?.total);
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
     useEffect(() => {
         getAllCategories();
-        getTotal();
     }, []);
-
-    //load more
-    const loadMore = async () => {
-        try {
-            setLoading(true);
-            const { data } = await api.get(`product/product-list/${page}`);
-            setLoading(false);
-            setProducts([...products, ...data?.products]);
-        } catch (error) {
-            console.log(error);
-            setLoading(false);
-        }
-    };
-
-    useEffect(() => {
-        if (page === 1) return;
-        loadMore();
-        // eslint-disable-next-line
-    }, [page]);
 
     //get filterd product
     const filterProduct = async () => {
@@ -204,7 +172,7 @@ const Home = () => {
                         {products?.map((product) => {
                             return (
                                 <div key={product._id}>
-                                    <div className="border-gray-300 border-2 flex flex-col app-md:w-52">
+                                    <div className="w-64 border-gray-300 border-2 flex flex-col app-md:w-52">
                                         <div className="w-64 h-64 border-b-2 border-gray-300 app-md:w-full app-md:h-52">
                                             <img
                                                 src={`${baseURL}product/product-photo/${product._id}`}
@@ -214,7 +182,7 @@ const Home = () => {
                                         </div>
                                         <div className="p-2">
                                             <div className="font-semibold text-primary">
-                                                {product.name}
+                                                {product.name.substring(0, 24)}
                                             </div>
                                             <div className="text-sm">
                                                 {product.description.substring(
@@ -268,21 +236,6 @@ const Home = () => {
                         })}
                     </div>
                 )}
-                <div>
-                    {products &&
-                        products.length < total &&
-                        products.length > 0 && (
-                            <button
-                                className="btn-solid-primary"
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    setPage(page + 1);
-                                }}
-                            >
-                                {loading ? "Loading ..." : "Load More"}
-                            </button>
-                        )}
-                </div>
             </div>
         </div>
     );

@@ -58,7 +58,7 @@ const CategoryProduct = () => {
                                         </div>
                                         <div className="p-2">
                                             <div className="font-semibold text-primary">
-                                                {product.name}
+                                                {product.name.substring(0, 24)}
                                             </div>
                                             <div className="text-sm">
                                                 {product.description.substring(

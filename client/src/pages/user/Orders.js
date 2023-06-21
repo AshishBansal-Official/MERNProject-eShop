@@ -89,17 +89,19 @@ const Orders = () => {
                                                                 <div className="h-40 w-40 border-r-2 border-gray-300 p-2">
                                                                     <img
                                                                         src={`${baseURL}product/product-photo/${product._id}`}
-                                                                        alt={
-                                                                            product.name
-                                                                        }
+                                                                        alt={product.name.substring(
+                                                                            0,
+                                                                            24
+                                                                        )}
                                                                         className="h-full w-full object-contain"
                                                                     />
                                                                 </div>
                                                                 <div className="flex flex-col items-start gap-1 p-2">
                                                                     <div>
-                                                                        {
-                                                                            product.name
-                                                                        }
+                                                                        {product.name.substring(
+                                                                            0,
+                                                                            24
+                                                                        )}
                                                                     </div>
                                                                     <div>
                                                                         {product.description.substring(

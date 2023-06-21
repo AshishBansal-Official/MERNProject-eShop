@@ -111,7 +111,7 @@ const ProductDetails = () => {
                         {relatedProducts?.map((product) => {
                             return (
                                 <div key={product._id}>
-                                    <div className="border-gray-300 border-2 flex flex-col app-md:w-52">
+                                    <div className="w-64 border-gray-300 border-2 flex flex-col app-md:w-52">
                                         <div className="w-64 h-64 border-b-2 border-gray-300 app-md:w-full app-md:h-52">
                                             <img
                                                 src={`${baseURL}product/product-photo/${product._id}`}
@@ -121,7 +121,7 @@ const ProductDetails = () => {
                                         </div>
                                         <div className="p-2">
                                             <div className="font-semibold text-primary">
-                                                {product.name}
+                                                {product.name.substring(0, 24)}
                                             </div>
                                             <div className="text-sm">
                                                 {product.description.substring(
