@@ -13,12 +13,12 @@ const Categories = () => {
                 {categories.length === 0 ? (
                     <div>No category found</div>
                 ) : (
-                    <div className="flex gap-4 flex-wrap items-center justify-center">
+                    <div className="flex app-md:flex-col gap-4 flex-wrap items-center justify-center">
                         {categories?.map((category) => {
                             return (
                                 <Link
                                     to={`/category/${category.slug}`}
-                                    className="bg-primary px-8 py-8 flex justify-center items-center text-white rounded-md select-none cursor-pointer text-2xl"
+                                    className="bg-primary px-4 py-3 app-md:py-2 flex justify-center items-center text-white rounded-md select-none cursor-pointer text-xl app-md:text-lg"
                                     key={category._id}
                                 >
                                     {category.name}

@@ -78,7 +78,7 @@ const Category = () => {
                             </div>
                             <div className="font-bold text-lg">Actions</div>
                         </div>
-                        <div className="h-0.5 w-full bg-gray-200"></div>
+                        <div className="h-0.5 w-full bg-gray-300"></div>
                         {/* Categories */}
                         {categories?.map((category) => {
                             return (

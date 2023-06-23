@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import api from "../utils/api";
-import ProductComponent from "../components/ProductComponent";
+import ProductsComponent from "../components/ProductsComponent";
 
 const CategoryProduct = () => {
     const params = useParams();
@@ -26,7 +26,7 @@ const CategoryProduct = () => {
     };
 
     return (
-        <div className="flex justify-center w-full p-10 mx-4 app-md:mx-0 app-md:p-6">
+        <div className="flex justify-center w-full p-10 mx-4 app-md:mx-0 app-md:p-6 app-md:px-0">
             <div className="w-full flex flex-col gap-10 items-center app-md:gap-6">
                 <div className="relative w-full flex flex-col items-center justify-center">
                     <div className="text-4xl text-primary">
@@ -39,12 +39,7 @@ const CategoryProduct = () => {
                 {products.length === 0 ? (
                     <div>No Product Found</div>
                 ) : (
-                    <div className="flex gap-4 flex-wrap flex-1 app-md:gap-2 justify-center">
-                        {/* Products */}
-                        {products?.map((product) => {
-                            return <ProductComponent product={product} />;
-                        })}
-                    </div>
+                    <ProductsComponent products={products} />
                 )}
             </div>
         </div>

@@ -1,27 +1,28 @@
 import { Link } from "react-router-dom";
+import DashboardCard from "../../components/DashboardCard";
 
 const Dashboard = () => {
     return (
         <div className="flex flex-col items-center justify-center h-full gap-10 app-md:p-6">
             <div className="text-4xl text-primary mb-2">Dashboard</div>
             <div className="flex gap-6 app-md:gap-4">
-                <div className="border-2 border-primary rounded-md shadow-xl">
-                    <Link
-                        to="profile"
-                        className="h-52 w-52 app-md:h-40 app-md:w-40  flex flex-col justify-center items-center app-md:m-2 cursor-pointer hover:scale-105 duration-300"
-                    >
-                        {/* CgProfile from react-icons */}
-                        <div className="w-40 h-40 text-primary">
+                <DashboardCard
+                    title="Profile"
+                    to="profile"
+                    icon={
+                        <div>
+                            {/* CgProfile from react-icons */}
                             <svg
                                 stroke="currentColor"
                                 fill="none"
                                 stroke-width="0"
                                 viewBox="0 0 24 24"
-                                class="w-40 h-40 text-primary"
+                                className="w-full h-full"
                                 height="1em"
                                 width="1em"
                                 xmlns="http://www.w3.org/2000/svg"
                             >
+                                {/* CgProfile from react-icons */}
                                 <path
                                     fill-rule="evenodd"
                                     clip-rule="evenodd"
@@ -36,24 +37,20 @@ const Dashboard = () => {
                                 ></path>
                             </svg>
                         </div>
-                        <div className="font-bold text-xl text-primary">
-                            Profile
-                        </div>
-                    </Link>
-                </div>
-                <div className="border-2 border-primary rounded-md shadow-xl">
-                    <Link
-                        to="orders"
-                        className="h-52 w-52 app-md:h-40 app-md:w-40 app-md:m-2 flex flex-col justify-center items-center  cursor-pointer hover:scale-105 duration-300"
-                    >
-                        {/* BsCartCheck from react-icons */}
-                        <div className="w-40 h-40 text-primary">
+                    }
+                />
+                <DashboardCard
+                    title="Orders"
+                    to="orders"
+                    icon={
+                        <div>
+                            {/* BsCartCheck from react-icons */}
                             <svg
                                 stroke="currentColor"
                                 fill="currentColor"
                                 stroke-width="0"
                                 viewBox="0 0 16 16"
-                                class="w-40 h-40 text-primary"
+                                className="w-full h-full"
                                 height="1em"
                                 width="1em"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -62,11 +59,8 @@ const Dashboard = () => {
                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
                             </svg>
                         </div>
-                        <div className="font-bold text-xl text-primary">
-                            Orders
-                        </div>
-                    </Link>
-                </div>
+                    }
+                />
             </div>
         </div>
     );

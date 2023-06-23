@@ -4,7 +4,7 @@ import api from "../utils/api";
 import toast from "react-hot-toast";
 import { useCart } from "../context/cart";
 import { baseURL } from "../utils/api";
-import ProductComponent from "../components/ProductComponent";
+import ProductsComponent from "../components/ProductsComponent";
 
 const ProductDetails = () => {
     const params = useParams();
@@ -46,7 +46,7 @@ const ProductDetails = () => {
     return (
         <div className="w-full h-full flex flex-col">
             <div className="p-8 flex gap-8 app-md:gap-3 app-md:px-3">
-                <div className="w-80 h-80 border-2 border-gray-300">
+                <div className="w-80 h-80 border-2">
                     <img
                         src={`${baseURL}product/product-photo/${product._id}`}
                         alt={product.name}
@@ -107,12 +107,10 @@ const ProductDetails = () => {
                         <div className="text-xl">No Similar Products Found</div>
                     </div>
                 ) : (
-                    <div className="flex gap-4 flex-wrap flex-1 app-md:justify-center">
-                        {/* Products */}
-                        {relatedProducts?.map((product) => {
-                            return <ProductComponent product={product} />;
-                        })}
-                    </div>
+                    <ProductsComponent
+                        products={relatedProducts}
+                        className="justify-start"
+                    />
                 )}
             </div>
         </div>

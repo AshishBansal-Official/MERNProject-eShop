@@ -30,7 +30,7 @@ const Product = () => {
     }, []);
 
     return (
-        <div className="flex justify-center w-full p-10 mx-4 app-md:mx-0 app-md:p-6">
+        <div className="flex justify-center w-full p-10 mx-4 app-md:mx-0 app-md:p-6 app-md:px-0">
             <div className="w-full flex flex-col gap-10 items-center app-md:gap-6">
                 <div className="relative w-full flex items-center justify-center app-md:flex-col">
                     <div className="text-4xl text-primary">Products</div>
@@ -46,16 +46,16 @@ const Product = () => {
                 ) : products.length === 0 ? (
                     <div>No product added</div>
                 ) : (
-                    <div className="flex gap-4 px-10 flex-wrap justify-center">
+                    <div className="flex gap-4 flex-wrap flex-1 app-md:justify-center app-md:gap-2 ">
                         {/* Products */}
                         {products?.map((product) => {
                             return (
                                 <div key={product._id}>
                                     <Link
                                         to={`${product.slug}`}
-                                        className="w-64 border-gray-300 border-2 flex flex-col app-md:w-52"
+                                        className="w-64 border-2 flex flex-col app-md:w-48"
                                     >
-                                        <div className="w-64 h-64 border-b-2 border-gray-300 object-contain p-4 app-md:w-full app-md:h-52">
+                                        <div className="w-full h-64 app-md:w-full app-md:h-48">
                                             <img
                                                 src={`${baseURL}product/product-photo/${product._id}`}
                                                 alt={product.name}
@@ -63,15 +63,22 @@ const Product = () => {
                                                 loading="lazy"
                                             />
                                         </div>
-                                        <div className="p-2">
-                                            <div>
-                                                {product.name.substring(0, 24)}
+                                        <div className="p-2 h-24 overflow-hidden">
+                                            <div className="font-semibold text-primary">
+                                                {product.name.length > 22
+                                                    ? product.name.substring(
+                                                          0,
+                                                          22
+                                                      ) + "..."
+                                                    : product.name}
                                             </div>
                                             <div className="text-sm">
-                                                {product.description.substring(
-                                                    0,
-                                                    100
-                                                )}
+                                                {product.description.length > 75
+                                                    ? product.description.substring(
+                                                          0,
+                                                          75
+                                                      ) + "..."
+                                                    : product.description}
                                             </div>
                                         </div>
                                     </Link>

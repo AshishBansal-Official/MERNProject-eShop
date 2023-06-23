@@ -81,33 +81,42 @@ const CartPage = () => {
                     {cart?.map((product, index) => (
                         <div
                             key={`${product._id}-${index}`}
-                            className="flex gap-2 border-2 border-gray-300 mb-2 mx-2"
+                            className="flex flex-col border-2 mb-2 mx-2"
                         >
-                            <div className="h-40 w-40 border-r-2 border-gray-300 p-2">
-                                <img
-                                    src={`${baseURL}product/product-photo/${product._id}`}
-                                    alt={product.name}
-                                    className="h-full w-full object-contain"
-                                    loading="lazy"
-                                />
-                            </div>
-                            <div className="flex flex-col gap-1 p-2">
-                                <div>{product.name.substring(0, 24)}</div>
-                                <div>
-                                    {product.description.substring(0, 100)}
+                            <div className="flex items-center   ">
+                                <div className="h-40 w-40 min-w-[10rem]">
+                                    <img
+                                        src={`${baseURL}product/product-photo/${product._id}`}
+                                        alt={product.name}
+                                        className="h-full w-full object-contain"
+                                        loading="lazy"
+                                    />
                                 </div>
-                                <div>
-                                    Price :{" "}
-                                    {product.price.toLocaleString("en-US", {
-                                        style: "currency",
-                                        currency: "INR",
-                                    })}
-                                </div>
-                                <div
-                                    className="btn-solid-primary bg-red-500 w-min"
-                                    onClick={() => removeCartItem(product._id)}
-                                >
-                                    Remove
+                                <div className="flex flex-col flex-grow gap-1 p-2">
+                                    <div>
+                                        {product.name.length > 22
+                                            ? product.name.substring(0, 22) +
+                                              "..."
+                                            : product.name}
+                                    </div>
+                                    <div className="app-md:text-sm max-h-11 overflow-hidden whitespace-nowrap app-md:whitespace-normal">
+                                        {product.description}
+                                    </div>
+                                    <div>
+                                        Price :{" "}
+                                        {product.price.toLocaleString("en-US", {
+                                            style: "currency",
+                                            currency: "INR",
+                                        })}
+                                    </div>
+                                    <div
+                                        className="btn-solid-primary bg-red-500 w-min  app-md:text-sm"
+                                        onClick={() =>
+                                            removeCartItem(product._id)
+                                        }
+                                    >
+                                        Remove
+                                    </div>
                                 </div>
                             </div>
                         </div>

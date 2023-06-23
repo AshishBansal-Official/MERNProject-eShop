@@ -3,7 +3,7 @@ import api from "../utils/api";
 import toast from "react-hot-toast";
 import { Prices } from "../utils/filterUtils";
 import Spinner from "../components/Spinner";
-import ProductComponent from "../components/ProductComponent";
+import ProductsComponent from "../components/ProductsComponent";
 
 const Home = () => {
     const [products, setProducts] = useState([]);
@@ -153,7 +153,7 @@ const Home = () => {
                 </div>
             </div>
             {/* Products */}
-            <div className="flex-1 flex flex-col h-full items-center p-8 gap-6 app-md:px-2">
+            <div className="flex-1 flex flex-col h-full items-center p-8 gap-6 app-md:px-0">
                 <div className="text-4xl m-x-auto text-primary">
                     All Products
                 </div>
@@ -162,11 +162,8 @@ const Home = () => {
                 ) : products.length === 0 ? (
                     <div>No product added</div>
                 ) : (
-                    <div className="flex gap-4 flex-wrap flex-1">
-                        {/* Products */}
-                        {products?.map((product) => {
-                            return <ProductComponent product={product} />;
-                        })}
+                    <div>
+                        <ProductsComponent products={products} />
                     </div>
                 )}
             </div>

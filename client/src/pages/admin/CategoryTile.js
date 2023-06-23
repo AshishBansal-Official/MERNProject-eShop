@@ -135,7 +135,7 @@ const CategoryTile = ({ category, refreshCategories }) => {
                     </div>
                 )}
             </div>
-            <div className="h-0.5 w-full bg-gray-200"></div>
+            <div className="h-0.5 w-full bg-gray-300"></div>
         </div>
     );
 };
