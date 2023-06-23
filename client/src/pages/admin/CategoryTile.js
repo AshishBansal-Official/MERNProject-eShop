@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import { ImCross } from "react-icons/im";
-import { ImCheckmark } from "react-icons/im";
 import api from "../../utils/api";
 
 const CategoryTile = ({ category, refreshCategories }) => {
@@ -80,7 +78,21 @@ const CategoryTile = ({ category, refreshCategories }) => {
                             type="submit"
                             className="btn-solid-primary bg-blue-500 ml-2"
                         >
-                            <ImCheckmark />
+                            {/* ImCheckmark from react-icons */}
+                            <div>
+                                <svg
+                                    stroke="currentColor"
+                                    fill="currentColor"
+                                    stroke-width="0"
+                                    version="1.1"
+                                    viewBox="0 0 16 16"
+                                    height="1em"
+                                    width="1em"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path d="M13.5 2l-7.5 7.5-3.5-3.5-2.5 2.5 6 6 10-10z"></path>
+                                </svg>
+                            </div>
                         </button>
                         <div
                             onClick={() => {
@@ -89,7 +101,21 @@ const CategoryTile = ({ category, refreshCategories }) => {
                             }}
                             className="btn-solid-primary bg-red-500 ml-2"
                         >
-                            <ImCross />
+                            {/* ImCross from react-icons */}
+                            <div>
+                                <svg
+                                    stroke="currentColor"
+                                    fill="currentColor"
+                                    stroke-width="0"
+                                    version="1.1"
+                                    viewBox="0 0 16 16"
+                                    height="1em"
+                                    width="1em"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path d="M15.854 12.854c-0-0-0-0-0-0l-4.854-4.854 4.854-4.854c0-0 0-0 0-0 0.052-0.052 0.090-0.113 0.114-0.178 0.066-0.178 0.028-0.386-0.114-0.529l-2.293-2.293c-0.143-0.143-0.351-0.181-0.529-0.114-0.065 0.024-0.126 0.062-0.178 0.114 0 0-0 0-0 0l-4.854 4.854-4.854-4.854c-0-0-0-0-0-0-0.052-0.052-0.113-0.090-0.178-0.114-0.178-0.066-0.386-0.029-0.529 0.114l-2.293 2.293c-0.143 0.143-0.181 0.351-0.114 0.529 0.024 0.065 0.062 0.126 0.114 0.178 0 0 0 0 0 0l4.854 4.854-4.854 4.854c-0 0-0 0-0 0-0.052 0.052-0.090 0.113-0.114 0.178-0.066 0.178-0.029 0.386 0.114 0.529l2.293 2.293c0.143 0.143 0.351 0.181 0.529 0.114 0.065-0.024 0.126-0.062 0.178-0.114 0-0 0-0 0-0l4.854-4.854 4.854 4.854c0 0 0 0 0 0 0.052 0.052 0.113 0.090 0.178 0.114 0.178 0.066 0.386 0.029 0.529-0.114l2.293-2.293c0.143-0.143 0.181-0.351 0.114-0.529-0.024-0.065-0.062-0.126-0.114-0.178z"></path>
+                                </svg>
+                            </div>
                         </div>
                     </form>
                 ) : (

@@ -94,6 +94,7 @@ const Orders = () => {
                                                                             24
                                                                         )}
                                                                         className="h-full w-full object-contain"
+                                                                        loading="lazy"
                                                                     />
                                                                 </div>
                                                                 <div className="flex flex-col items-start gap-1 p-2">

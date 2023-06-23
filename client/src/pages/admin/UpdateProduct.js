@@ -226,6 +226,7 @@ const UpdateProduct = () => {
                                     src={URL.createObjectURL(photo)}
                                     alt="product_photo"
                                     className="h-40"
+                                    loading="lazy"
                                 />
                             </div>
                         ) : (
@@ -235,6 +236,7 @@ const UpdateProduct = () => {
                                         src={`${baseURL}product/product-photo/${id}`}
                                         alt="product_photo"
                                         className="h-40"
+                                        loading="lazy"
                                     />
                                 )}
                             </div>

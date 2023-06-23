@@ -3,33 +3,28 @@ import api from "../utils/api";
 import toast from "react-hot-toast";
 import { Prices } from "../utils/filterUtils";
 import Spinner from "../components/Spinner";
-import { useNavigate } from "react-router-dom";
-import { useCart } from "../context/cart";
-import { baseURL } from "../utils/api";
+import ProductComponent from "../components/ProductComponent";
 
 const Home = () => {
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
-    const [firstLoading, setFirstLoading] = useState(false);
     const [loading, setLoading] = useState(false);
     const [checked, setChecked] = useState([]);
     const [radio, setRadio] = useState([]);
-    const navigate = useNavigate();
-    const [cart, setCart] = useCart();
 
     // Get all products
     const getAllProducts = async () => {
-        setFirstLoading(true);
+        setLoading(true);
         try {
             const { data } = await api.get(`/product/get-products`);
             if (data?.success) {
                 setProducts(data?.products);
             }
-            setFirstLoading(false);
+            setLoading(false);
         } catch (error) {
             console.log(error);
             toast.error("Something went wrong in getting products");
-            setFirstLoading(false);
+            setLoading(false);
         }
     };
 
@@ -162,7 +157,7 @@ const Home = () => {
                 <div className="text-4xl m-x-auto text-primary">
                     All Products
                 </div>
-                {firstLoading ? (
+                {loading ? (
                     <Spinner />
                 ) : products.length === 0 ? (
                     <div>No product added</div>
@@ -170,69 +165,7 @@ const Home = () => {
                     <div className="flex gap-4 flex-wrap flex-1">
                         {/* Products */}
                         {products?.map((product) => {
-                            return (
-                                <div key={product._id}>
-                                    <div className="w-64 border-gray-300 border-2 flex flex-col app-md:w-52">
-                                        <div className="w-64 h-64 border-b-2 border-gray-300 app-md:w-full app-md:h-52">
-                                            <img
-                                                src={`${baseURL}product/product-photo/${product._id}`}
-                                                alt={product.name}
-                                                className="h-full w-full object-contain"
-                                            />
-                                        </div>
-                                        <div className="p-2">
-                                            <div className="font-semibold text-primary">
-                                                {product.name.substring(0, 24)}
-                                            </div>
-                                            <div className="text-sm">
-                                                {product.description.substring(
-                                                    0,
-                                                    30
-                                                )}
-                                            </div>
-                                            <div className="text-sm font-semibold">
-                                                {product.price.toLocaleString(
-                                                    "en-US",
-                                                    {
-                                                        style: "currency",
-                                                        currency: "INR",
-                                                    }
-                                                )}
-                                            </div>
-                                        </div>
-                                        <div className="flex app-md:gap-2 mb-4 items-center justify-center">
-                                            <div
-                                                className="btn-solid-primary bg-blue-500 text-sm mr-2 app-md:mr-0"
-                                                onClick={() =>
-                                                    navigate(
-                                                        `/product/${product.slug}`
-                                                    )
-                                                }
-                                            >
-                                                DETAILS
-                                            </div>
-                                            <div
-                                                className="btn-solid-primary text-sm"
-                                                onClick={() => {
-                                                    setCart([...cart, product]);
-                                                    localStorage.setItem(
-                                                        "cart",
-                                                        JSON.stringify([
-                                                            ...cart,
-                                                            product,
-                                                        ])
-                                                    );
-                                                    toast.success(
-                                                        "Product Added to Cart"
-                                                    );
-                                                }}
-                                            >
-                                                ADD TO CART
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            );
+                            return <ProductComponent product={product} />;
                         })}
                     </div>
                 )}

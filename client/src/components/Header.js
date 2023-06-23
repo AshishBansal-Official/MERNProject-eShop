@@ -1,14 +1,11 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AiOutlineUser } from "react-icons/ai";
-import { HiShoppingBag } from "react-icons/hi2";
 import { useAuth } from "../context/auth";
 import { useSearch } from "../context/search";
 import { useCart } from "../context/cart";
 import toast from "react-hot-toast";
 import api from "../utils/api";
 import useCategory from "../hooks/useCategory";
-import { AiOutlineShoppingCart, AiOutlineSearch } from "react-icons/ai";
 
 const Header = () => {
     const [auth, setAuth] = useAuth();
@@ -51,7 +48,26 @@ const Header = () => {
                     className="font-semibold font-poppins text-xl text-primary flex-grow-0 cursor-pointer select-none"
                 >
                     <div className="flex items-center">
-                        <HiShoppingBag className="h-8 w-8 mr-0.5 app-md:hidden" />
+                        <div className="h-8 w-8 mr-0.5 app-md:hidden">
+                            {/* HiShoppingBag icon from react-icons */}
+                            <svg
+                                stroke="currentColor"
+                                fill="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                                class="h-8 w-8 mr-0.5 app-md:hidden"
+                                height="1em"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 004.25 22.5h15.5a1.875 1.875 0 001.865-2.071l-1.263-12a1.875 1.875 0 00-1.865-1.679H16.5V6a4.5 4.5 0 10-9 0zM12 3a3 3 0 00-3 3v.75h6V6a3 3 0 00-3-3zm-3 8.25a3 3 0 106 0v-.75a.75.75 0 011.5 0v.75a4.5 4.5 0 11-9 0v-.75a.75.75 0 011.5 0v.75z"
+                                    clip-rule="evenodd"
+                                ></path>
+                            </svg>
+                        </div>
                         EShop
                     </div>
                 </Link>
@@ -77,7 +93,21 @@ const Header = () => {
                             type="submit"
                             className="bg-primary rounded-r-full text-white flex items-center justify-center px-2 cursor-pointer select-none"
                         >
-                            <AiOutlineSearch className="h-6 w-6" />
+                            {/* AiOutlineSearch from react icons */}
+                            <div className="h-6 w-6">
+                                <svg
+                                    stroke="currentColor"
+                                    fill="currentColor"
+                                    stroke-width="0"
+                                    viewBox="0 0 1024 1024"
+                                    class="h-6 w-6"
+                                    height="1em"
+                                    width="1em"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"></path>
+                                </svg>
+                            </div>
                         </button>
                     </form>
                 </>
@@ -139,7 +169,21 @@ const Header = () => {
                         to="/cart"
                         className="h-10 w-10 text-primary relative cursor-pointer"
                     >
-                        <AiOutlineShoppingCart className="h-full w-full" />
+                        {/* AiOutlineShoppingCart from react-icons */}
+                        <div className="h-full w-full">
+                            <svg
+                                stroke="currentColor"
+                                fill="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 1024 1024"
+                                class="h-full w-full"
+                                height="1em"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path d="M922.9 701.9H327.4l29.9-60.9 496.8-.9c16.8 0 31.2-12 34.2-28.6l68.8-385.1c1.8-10.1-.9-20.5-7.5-28.4a34.99 34.99 0 0 0-26.6-12.5l-632-2.1-5.4-25.4c-3.4-16.2-18-28-34.6-28H96.5a35.3 35.3 0 1 0 0 70.6h125.9L246 312.8l58.1 281.3-74.8 122.1a34.96 34.96 0 0 0-3 36.8c6 11.9 18.1 19.4 31.5 19.4h62.8a102.43 102.43 0 0 0-20.6 61.7c0 56.6 46 102.6 102.6 102.6s102.6-46 102.6-102.6c0-22.3-7.4-44-20.6-61.7h161.1a102.43 102.43 0 0 0-20.6 61.7c0 56.6 46 102.6 102.6 102.6s102.6-46 102.6-102.6c0-22.3-7.4-44-20.6-61.7H923c19.4 0 35.3-15.8 35.3-35.3a35.42 35.42 0 0 0-35.4-35.2zM305.7 253l575.8 1.9-56.4 315.8-452.3.8L305.7 253zm96.9 612.7c-17.4 0-31.6-14.2-31.6-31.6 0-17.4 14.2-31.6 31.6-31.6s31.6 14.2 31.6 31.6a31.6 31.6 0 0 1-31.6 31.6zm325.1 0c-17.4 0-31.6-14.2-31.6-31.6 0-17.4 14.2-31.6 31.6-31.6s31.6 14.2 31.6 31.6a31.6 31.6 0 0 1-31.6 31.6z"></path>
+                            </svg>
+                        </div>
                         {cart?.length > 0 && (
                             <div className="absolute top-0 right-0 rounded-full select-none bg-primary h-5 w-5 text-white flex justify-center items-center text-xs">
                                 {cart?.length}
@@ -173,7 +217,21 @@ const Header = () => {
                                 className="h-10 w-10 rounded-full border-primary border-2 text-primary flex items-center justify-center"
                             >
                                 <div className="h-8 w-8 cursor-pointer">
-                                    <AiOutlineUser className="h-full w-full" />
+                                    {/* AiOutlineUser from react-icons */}
+                                    <div className="h-full w-full">
+                                        <svg
+                                            stroke="currentColor"
+                                            fill="currentColor"
+                                            stroke-width="0"
+                                            viewBox="0 0 1024 1024"
+                                            class="h-full w-full"
+                                            height="1em"
+                                            width="1em"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path d="M858.5 763.6a374 374 0 0 0-80.6-119.5 375.63 375.63 0 0 0-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 0 0-80.6 119.5A371.7 371.7 0 0 0 136 901.8a8 8 0 0 0 8 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 0 0 8-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z"></path>
+                                        </svg>
+                                    </div>
                                 </div>
                             </div>
                             <div

@@ -60,6 +60,7 @@ const Product = () => {
                                                 src={`${baseURL}product/product-photo/${product._id}`}
                                                 alt={product.name}
                                                 className="h-full w-full object-contain"
+                                                loading="lazy"
                                             />
                                         </div>
                                         <div className="p-2">
