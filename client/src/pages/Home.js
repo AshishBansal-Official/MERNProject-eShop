@@ -92,7 +92,9 @@ const Home = () => {
                 <hr />
                 {/* Filter By Category */}
                 <div className="mb-2">
-                    <div className="px-4 pt-4 text-lg">Filter By Category</div>
+                    <div className="px-4 flex items-center h-12 text-white bg-primary text-lg">
+                        Filter By Category
+                    </div>
                     <div className="px-4 py-2 max-h-48 flex flex-col ">
                         {categories.length > 0 &&
                             categories.map((category) => {
@@ -120,7 +122,9 @@ const Home = () => {
                 <hr />
                 {/* Filter By Price */}
                 <div className="mb-2">
-                    <div className="px-4 pt-4 text-lg">Filter By Price</div>
+                    <div className="px-4 flex items-center h-12 text-white bg-primary text-lg">
+                        Filter By Price
+                    </div>
                     <div className="px-4 py-2 max-h-48 flex flex-col ">
                         {Prices?.map((price) => {
                             return (

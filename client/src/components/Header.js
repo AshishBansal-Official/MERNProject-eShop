@@ -41,11 +41,11 @@ const Header = () => {
 
     return (
         <div className="flex flex-col">
-            <div className="h-16 flex items-center justify-between mx-4 gap-4 p-2 z-50 app-md:mx-0 app-md:gap-1">
+            <div className="h-16 flex items-center justify-between bg-primary px-4 gap-4 p-2 z-50 app-md:mx-0 app-md:gap-1">
                 {/* Logo */}
                 <Link
                     to="/"
-                    className="font-semibold font-poppins text-xl text-primary flex-grow-0 cursor-pointer select-none"
+                    className="font-semibold font-poppins text-xl text-white flex-grow-0 cursor-pointer select-none"
                 >
                     <div className="flex items-center">
                         <div className="h-8 w-8 mr-0.5 app-md:hidden">
@@ -53,18 +53,18 @@ const Header = () => {
                             <svg
                                 stroke="currentColor"
                                 fill="currentColor"
-                                stroke-width="0"
+                                strokeWidth="0"
                                 viewBox="0 0 24 24"
                                 aria-hidden="true"
-                                class="h-8 w-8 mr-0.5 app-md:hidden"
+                                className="h-8 w-8 mr-0.5 app-md:hidden"
                                 height="1em"
                                 width="1em"
                                 xmlns="http://www.w3.org/2000/svg"
                             >
                                 <path
-                                    fill-rule="evenodd"
+                                    fillRule="evenodd"
                                     d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 004.25 22.5h15.5a1.875 1.875 0 001.865-2.071l-1.263-12a1.875 1.875 0 00-1.865-1.679H16.5V6a4.5 4.5 0 10-9 0zM12 3a3 3 0 00-3 3v.75h6V6a3 3 0 00-3-3zm-3 8.25a3 3 0 106 0v-.75a.75.75 0 011.5 0v.75a4.5 4.5 0 11-9 0v-.75a.75.75 0 011.5 0v.75z"
-                                    clip-rule="evenodd"
+                                    clipRule="evenodd"
                                 ></path>
                             </svg>
                         </div>
@@ -79,7 +79,7 @@ const Header = () => {
                     >
                         <input
                             type="text"
-                            className="flex h-10 rounded-l-full border-primary border-2 w-full max-w-md outline-none px-4"
+                            className="flex h-10 rounded-l-full w-full max-w-md outline-none px-4"
                             placeholder="What are you looking for?"
                             value={searchValue.keyword}
                             onChange={(e) =>
@@ -91,16 +91,16 @@ const Header = () => {
                         />
                         <button
                             type="submit"
-                            className="bg-primary rounded-r-full text-white flex items-center justify-center px-2 cursor-pointer select-none"
+                            className="bg-white text-primary border-2 border-white rounded-r-full  flex items-center justify-center px-2 cursor-pointer select-none"
                         >
                             {/* AiOutlineSearch from react icons */}
                             <div className="h-6 w-6">
                                 <svg
                                     stroke="currentColor"
                                     fill="currentColor"
-                                    stroke-width="0"
+                                    strokeWidth="0"
                                     viewBox="0 0 1024 1024"
-                                    class="h-6 w-6"
+                                    className="h-6 w-6"
                                     height="1em"
                                     width="1em"
                                     xmlns="http://www.w3.org/2000/svg"
@@ -128,13 +128,13 @@ const Header = () => {
                                 onClick={() => {
                                     setShowCategoryDropdown((show) => !show);
                                 }}
-                                className="text-primary flex items-center justify-center font-semibold cursor-pointer"
+                                className="text-white flex items-center justify-center font-semibold cursor-pointer"
                             >
                                 CATEGORY
                             </div>
                             <div
                                 onClick={() => setShowCategoryDropdown(false)}
-                                className={`absolute top-full right-0 ${
+                                className={`absolute border-2 border-white top-full right-0 ${
                                     !showCategoryDropdown && "hidden"
                                 }`}
                             >
@@ -167,16 +167,16 @@ const Header = () => {
                     {/* Cart */}
                     <Link
                         to="/cart"
-                        className="h-10 w-10 text-primary relative cursor-pointer"
+                        className="h-10 w-10 text-white relative cursor-pointer"
                     >
                         {/* AiOutlineShoppingCart from react-icons */}
                         <div className="h-full w-full">
                             <svg
                                 stroke="currentColor"
                                 fill="currentColor"
-                                stroke-width="0"
+                                strokeWidth="0"
                                 viewBox="0 0 1024 1024"
-                                class="h-full w-full"
+                                className="h-full w-full"
                                 height="1em"
                                 width="1em"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -185,7 +185,7 @@ const Header = () => {
                             </svg>
                         </div>
                         {cart?.length > 0 && (
-                            <div className="absolute top-0 right-0 rounded-full select-none bg-primary h-5 w-5 text-white flex justify-center items-center text-xs">
+                            <div className="absolute top-0 right-0 rounded-full select-none bg-white h-5 w-5 text-primary flex justify-center items-center text-xs">
                                 {cart?.length}
                             </div>
                         )}
@@ -214,7 +214,7 @@ const Header = () => {
                                 onClick={() => {
                                     setShowDropdown((show) => !show);
                                 }}
-                                className="h-10 w-10 rounded-full border-primary border-2 text-primary flex items-center justify-center"
+                                className="h-10 w-10 rounded-full border-white border-2 text-white flex items-center justify-center"
                             >
                                 <div className="h-8 w-8 cursor-pointer">
                                     {/* AiOutlineUser from react-icons */}
@@ -222,9 +222,9 @@ const Header = () => {
                                         <svg
                                             stroke="currentColor"
                                             fill="currentColor"
-                                            stroke-width="0"
+                                            strokeWidth="0"
                                             viewBox="0 0 1024 1024"
-                                            class="h-full w-full"
+                                            className="h-full w-full"
                                             height="1em"
                                             width="1em"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -236,7 +236,7 @@ const Header = () => {
                             </div>
                             <div
                                 onClick={() => setShowDropdown(false)}
-                                className={`absolute top-full right-0 ${
+                                className={`absolute top-[110%] border-2 border-white right-0 ${
                                     !showDropdown && "hidden"
                                 }`}
                             >
@@ -263,7 +263,7 @@ const Header = () => {
                     )}
                 </div>
             </div>
-            <div className="hidden app-md:block mb-3 mx-2">
+            <div className="hidden app-md:block m-2">
                 <div
                     onClick={() => setShowCategoryDropdown(false)}
                     className={
