@@ -193,10 +193,16 @@ const Header = () => {
                     {/* Login-Register / Dashboard-Logout */}
                     {!auth.user ? (
                         <>
-                            <Link to="/login" className="btn-solid-primary">
+                            <Link
+                                to="/login"
+                                className="w-16 py-2 flex justify-center items-center text-white select-none cursor-pointer"
+                            >
                                 Login
                             </Link>
-                            <Link to="/register" className="btn-solid-primary">
+                            <Link
+                                to="/register"
+                                className="w-16 py-2 flex justify-center items-center text-white select-none cursor-pointer"
+                            >
                                 Register
                             </Link>
                         </>
@@ -263,11 +269,11 @@ const Header = () => {
                     )}
                 </div>
             </div>
-            <div className="hidden app-md:block m-2">
+            <div className="hidden bg-slate-100 app-md:block m-2">
                 <div
                     onClick={() => setShowCategoryDropdown(false)}
                     className={
-                        "flex w-full whitespace-nowrap overflow-x-scroll gap-2 scrollbar-none"
+                        "flex w-full  whitespace-nowrap overflow-x-scroll gap-2 scrollbar-none"
                     }
                 >
                     <Link
